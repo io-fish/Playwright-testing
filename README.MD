@@ -21,13 +21,29 @@ Before running the tests, make sure you have the following installed:
    ```bash
    npm install
    ```
-3. Run tests:
+3. Run tests from root directory:
    ```bash
    npx playwright test
    ```
 
-## Reports
+## Playwright default html report
 
-The report will be generated in the `./playwright-reports` folder.
+The default playwright report will be generated after test tun in the `./playwright-reports` folder.
+
+Note: Playwright tracer works only with the default playwright html reporter.
+
+## Allure html report
+
+1. To generate the allure report, run:
+
+```bash
+npx allure generate ./allure-results
+```
+
+2. To open the allure report, run:
+
+```bash
+npx allure open ./allure-report
+```
 
 Happy testing! 🎭

@@ -12,7 +12,12 @@
   "author": "Io. Psaro.",
   "license": "ISC",
   "devDependencies": {
+    "@faker-js/faker": "^8.1.0",
     "@playwright/test": "^1.39.0",
-    "@types/node": "^20.8.6"
+    "@types/node": "^20.8.6",
+    "allure-commandline": "^2.24.1",
+    "allure-playwright": "^2.9.2",
+    "luxon": "^3.4.3",
+    "rimraf": "^5.0.5"
   }
 }
