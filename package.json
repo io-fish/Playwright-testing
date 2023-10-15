@@ -4,11 +4,11 @@
   "description": "Playwright test suite for API and UI testing",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test",
+    "test": "npx playwright test --trace on",
     "pw-report": "npx kill-port 9323 && npx playwright show-report",
     "allure-report": "npx allure generate ./allure-results --clean && npx allure open ./allure-report"
   },
-  "author": "Io. Psaro.",
+  "author": "Psaros.Io",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^8.1.0",

@@ -21,7 +21,7 @@ test('should be able to create a booking', async ({ request }) => {
     expect(responseBody.booking).toHaveProperty("lastname", "Brown");
     expect(responseBody.booking).toHaveProperty("totalprice", 111);
     expect(responseBody.booking).toHaveProperty("depositpaid", true);
-    expect(responseBody.booking).toHaveProperty("bookingdates.checkin", "2023-062-01");
+    expect(responseBody.booking).toHaveProperty("bookingdates.checkin", "2023-06-01");
     expect(responseBody.booking).toHaveProperty("bookingdates.checkout");
     expect(responseBody.booking).toHaveProperty("additionalneeds", "Breakfast");
     expect(responseBody).toHaveProperty("bookingid", responseBody.bookingid);
