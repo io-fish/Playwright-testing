@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "description": "Playwright test suite for API and UI testing",
   "main": "index.js",
-  "scripts": {},
-  "keywords": [
-    "api",
-    "ui",
-    "testing"
-  ],
+  "scripts": {
+    "test": "npx playwright test",
+    "pw-report": "npx kill-port 9323 && npx playwright show-report",
+    "allure-report": "npx allure generate ./allure-results --clean && npx allure open ./allure-report"
+  },
   "author": "Io. Psaro.",
   "license": "ISC",
   "devDependencies": {

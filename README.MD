@@ -30,20 +30,19 @@ Before running the tests, make sure you have the following installed:
 
 The default playwright report will be generated after test tun in the `./playwright-reports` folder.
 
+1. To open the playwright report, run:
+   ```bash
+   npm run pw-report
+   ```
+
 Note: Playwright tracer works only with the default playwright html reporter.
 
 ## Allure html report
 
-1. To generate the allure report, run:
+1. To generate and open the allure report, run:
 
-```bash
-npx allure generate ./allure-results
-```
-
-2. To open the allure report, run:
-
-```bash
-npx allure open ./allure-report
-```
+   ```bash
+   npm run allure-report
+   ```
 
 Happy testing! 🎭
