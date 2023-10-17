@@ -19,6 +19,27 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test
+    - name: Allure Report with history
+      # You may pin to the exact commit or the version.
+      # uses: simple-elf/allure-report-action@e3e158032c1140676ea295a073942850d68bae29
+      uses: simple-elf/allure-report-action@v1.7
+      with:
+        # Allure test result data dir
+        allure_results: build/allure-results # default is allure-results
+        # Allure report target dir
+        allure_report: allure-report # default is allure-report
+        # Folder with gh-pages branch
+        gh_pages: gh-pages # default is gh-pages
+        # Folder for allure history
+        allure_history: allure-history # default is allure-history
+        # GitHub Actions build number
+        github_run_num: ${{ github.run_number }}
+        # GitHub Actions run id
+        github_run_id: ${{ github.run_id }}
+        # GitHub repository
+        github_repo: ${{ github.repository }}
+        # GitHub repository owner
+        github_repo_owner: ${{ github.repository_owner }}
     - uses: actions/upload-artifact@v3
       if: always()
       with:
