@@ -20,6 +20,7 @@ jobs:
     - name: Run Playwright tests
       run: npx playwright test
     - name: Allure Report with history
+      if: always()
       # You may pin to the exact commit or the version.
       # uses: simple-elf/allure-report-action@e3e158032c1140676ea295a073942850d68bae29
       uses: simple-elf/allure-report-action@v1.7
