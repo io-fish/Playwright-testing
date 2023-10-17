@@ -5,7 +5,7 @@ test('should be able to create a booking', async ({ request }) => {
         data: {
             "firstname": "Jim",
             "lastname": "Brown",
-            "totalprice": 111,
+            "totalprice": 1111,
             "depositpaid": true,
             "bookingdates": {
                 "checkin": "2023-06-01",
