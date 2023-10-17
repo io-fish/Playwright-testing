@@ -18,14 +18,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npm test
-    - name: Allure report
-      uses: QuintilianoNery/action-allure-report-V2@0.2.0
-      with:
-        # Allure test result data dir
-        results-dir: playwright-report/
-        # Allure report target dir
-        report-dir: playwright-report/
+      run: npx playwright test
     - uses: actions/upload-artifact@v3
       if: always()
       with:
