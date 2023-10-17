@@ -19,8 +19,13 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npm test
-    - name: Generate allure report
-      run: npx allure generate playwright-report/allure-results --clean && npx allure open playwright-report/allure-report
+    - name: Allure report
+      uses: afiore/action-allure-report@v0.1.0
+      with:
+        # Allure test result data dir
+        results-dir: playwright-report/
+        # Allure report target dir
+        report-dir: playwright-report/
     - uses: actions/upload-artifact@v3
       if: always()
       with:
