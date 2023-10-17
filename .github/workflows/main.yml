@@ -20,7 +20,7 @@ jobs:
     - name: Run Playwright tests
       run: npm test
     - name: Allure report
-      uses: esemi/action-allure-report@v0.2.0
+      uses: QuintilianoNery/action-allure-report-V2@0.2.0
       with:
         # Allure test result data dir
         results-dir: playwright-report/
