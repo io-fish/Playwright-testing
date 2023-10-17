@@ -19,28 +19,31 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test
-    - name: Allure Report with history
-      if: always()
-      # You may pin to the exact commit or the version.
-      # uses: simple-elf/allure-report-action@e3e158032c1140676ea295a073942850d68bae29
-      uses: simple-elf/allure-report-action@v1.7
+    - name: Prepare Allure history # Step to prepare Allure history directory
+      run: |
+        cd ..
+        mkdir -p ${{ vars.ALLURE_RESULTS_PATH }}
+    - name: Get Allure history # Step to retrieve Allure history
+      uses: actions/checkout@v3
+      if: always() # Execute even if previous steps fail
+      continue-on-error: true # Continue execution even if the step fails
       with:
-        # Allure test result data dir
-        allure_results: build/allure-results # default is allure-results
-        # Allure report target dir
-        allure_report: allure-report # default is allure-report
-        # Folder with gh-pages branch
-        gh_pages: gh-pages # default is gh-pages
-        # Folder for allure history
-        allure_history: allure-history # default is allure-history
-        # GitHub Actions build number
-        github_run_num: ${{ github.run_number }}
-        # GitHub Actions run id
-        github_run_id: ${{ github.run_id }}
-        # GitHub repository
-        github_repo: ${{ github.repository }}
-        # GitHub repository owner
-        github_repo_owner: ${{ github.repository_owner }}
+          ref: gh-pages # Specify the branch to retrieve Allure history from
+          path: gh-pages # Set the destination path for Allure history
+    - name: Allure report action # Step to generate Allure report
+      uses: simple-elf/allure-report-action@master
+      if: always() # Execute even if previous steps fail
+      with:
+          allure_results: ${{ vars.ALLURE_RESULTS_PATH }} # Specify the directory containing Allure results
+          allure_history: allure-history # Specify the directory to store Allure history
+          keep_reports: 5 # Specify the number of previous reports to keep
+    - name: Deploy Allure report to GitHub Pages # Step to deploy Allure report to GitHub Pages
+      if: always() # Execute even if previous steps fail
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Provide the GitHub token for authentication
+          publish_branch: gh-pages # Specify the branch to publish the report to
+          publish_dir: allure-history # Specify the directory containing the report
     - uses: actions/upload-artifact@v3
       if: always()
       with:
