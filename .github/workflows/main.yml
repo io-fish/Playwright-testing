@@ -31,12 +31,12 @@ jobs:
       - uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: allure-report
-          path: allure-reports/
+          name: allure-reports/allure-report
+          path: allure-report/
           retention-days: 30
       - uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: allure-results
-          path: allure-reports/
+          name: allure-reports/allure-results
+          path: allure-results/
           retention-days: 30
