@@ -20,8 +20,10 @@ jobs:
     - name: Run Playwright tests
       run: npx playwright test
     - name: Run allure report
+      if: always()
       run: npx allure generate playwright-report/allure-results
     - name: Open allure report
+      if: always()
       run: npx allure open playwright-report/allure-results
     - uses: actions/upload-artifact@v3
       if: always()
