@@ -24,7 +24,7 @@ jobs:
       run: npx allure generate playwright-report/allure-results
     - name: Open allure report
       if: always()
-      run: npx allure open playwright-report/allure-results
+      run: npx allure open playwright-report/allure-report
     - uses: actions/upload-artifact@v3
       if: always()
       with:
