@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Oct 19 16:16:15 GMT 2023","Thu Oct 19 16:16:15 GMT 2023","817","chromium","example.spec.js","","","","get started link",""
+"passed","Thu Oct 19 16:16:12 GMT 2023","Thu Oct 19 16:16:13 GMT 2023","171","chromium","01_post_static_data.spec.js","","","","should be able to create a booking",""
+"passed","Thu Oct 19 16:16:13 GMT 2023","Thu Oct 19 16:16:15 GMT 2023","1955","chromium","example.spec.js","","","","has title",""
