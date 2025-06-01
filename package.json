@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test --trace on",
+    "test-ui-debugger": "npx playwright test --ui --debug",
     "pw-report": "npx kill-port 9323 && npx playwright show-report",
     "allure-report": "npx allure generate ./allure-results --clean && npx allure open ./allure-report"
   },
@@ -14,7 +15,7 @@
     "@faker-js/faker": "^8.1.0",
     "@playwright/test": "^1.39.0",
     "@types/node": "^20.8.6",
-    "allure-playwright": "^2.9.2",
+    "allure-playwright": "^2.15.1",
     "luxon": "^3.4.3",
     "rimraf": "^5.0.5"
   },
